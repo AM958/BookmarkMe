@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link href="style.css" type="text/css" rel="stylesheet" />
+        <style type="text/css">
+        body{
+            background: url("images/bg0.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .elem{
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+            background-color: #C8C8C8;
+            background-color: hsla(0,100%,100%,0.9);
+            border: 2px #0088dd;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+    </style>
+        <title>Register Page</title>
+</head>
+<body>
+    <br/>
+<div class="elem" >
+<h3>Provide all the fields for registration.</h3>
+<form action="Register" method="post" class="form-inline" role="form">
+    <div class="form-group">
+        <label class="sr-only" for="email">Email:</label>
+        <input type="email" name="email" placeholder="Enter email" class="form-control"><br>
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="email">Password:</label>
+        <input type="password" name="password" placeholder="Enter password" class="form-control"><br>
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="email">Name:</label>
+        <input type="text" name="name" placeholder="Enter your name" class="form-control"><br>
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="email">Country:</label>
+        <input type="text" name="country" placeholder="Enter your country" class="form-control"><br>
+    </div>
+    <button type="submit" class="btn btn-primary" value="Register">Register</button>
+</form>
+<br>
+If you are registered user, please <a href="homepage.jsp">login</a>.
+</div>
+</body>
+</html>
