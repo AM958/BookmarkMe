@@ -12,8 +12,8 @@
                                                         <input type="hidden" name="urlid" value="${param.urlid}"/>
                                                         <input type="hidden" name="collid" value="${param.urlcollectionid}"/>
                                                         <input type="hidden" name="jsp" value="${param.respJsp}">
-                                                        <label for="mySubmit" class="btn" ><i class="glyphicon glyphicon-trash grow"></i></label>
-                                                        <input id="mySubmit" type="submit" value="Go" class="hidden">
+                                                        <label for="submitDel${param.userid}${param.urlid}${param.urlcollectionid}" class="btn" ><i class="glyphicon glyphicon-trash grow"></i></label>
+                                                        <input id="submitDel${param.userid}${param.urlid}${param.urlcollectionid}" type="submit" value="Go" class="hidden">
                                                         </span>
                                                     </form>
                                                 </td>

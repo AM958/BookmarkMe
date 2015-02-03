@@ -32,7 +32,7 @@ public class del_url extends HttpServlet {
         String urlid = request.getParameter("urlid");
         String jsp = request.getParameter("jsp");
         String errorMsg = null;
-        if(colid.equals("")){
+        if(colid.equals("") || uid.equals("") || urlid.equals("") || jsp.equals("")){
             errorMsg ="There was an error when trying to delete this url, try again!";
         }         
         if(errorMsg != null){
@@ -44,11 +44,12 @@ public class del_url extends HttpServlet {
         Connection con = (Connection) getServletContext().getAttribute("DBConnection");
         PreparedStatement ps = null;
         try {
-            ps = con.prepareStatement("DELETE FROM urls WHERE ownerID=? AND collectionID=? AND urlID=? ");
+            ps = con.prepareStatement("DELETE FROM urls WHERE ownerID=? AND collectionID=? AND urlID=?");
             ps.setString(1, uid);
             ps.setString(2, colid);
             ps.setString(3, urlid);
             ps.execute();
+            logger.info("Query executed"+uid+colid+urlid);
             request.setAttribute("ReqSuccess","URL was successfully deleted!"); 
             RequestDispatcher rd = getServletContext().getRequestDispatcher(jsp);
             rd.include(request, response);
