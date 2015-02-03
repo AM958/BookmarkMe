@@ -16,40 +16,20 @@
             }); 
         }); 
     </script>-->
-<!--    <script> 
-        // wait for the DOM to be loaded 
-        $(document).ready(function() { 
-        // bind 'myForm' and provide a simple callback function 
-            $('#new_col').ajaxForm(function() { 
-                alert("Collection successfully created"); 
-                window.location.reload();
-            }); 
-        }); 
-    </script>-->
-<!--    <script> 
-        // wait for the DOM to be loaded 
-        $(document).ready(function() { 
-            // bind 'myForm' and provide a simple callback function 
-            $('#rm_col').ajaxForm(function() { 
-                alert("Collection successfully created"); 
-                window.location.reload();
-            }); 
-        }); 
-    </script>-->
 
  <c:if test="${not empty ReqError}">
     <script>
-    window.addEventListener("load",function(){
-         alert("${ReqError}");
-    });
+        window.addEventListener("load",function(){
+             alert("${ReqError}");
+        });
     </script>
 </c:if>
     
 <c:if test="${not empty ReqSuccess}">
     <script>
-    window.addEventListener("load",function(){
-         alert("${ReqSuccess}");
-    });
+        window.addEventListener("load",function(){
+             alert("${ReqSuccess}");
+        });
     </script>
 </c:if>
 
