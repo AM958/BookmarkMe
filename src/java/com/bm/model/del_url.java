@@ -50,7 +50,7 @@ public class del_url extends HttpServlet {
             ps.setString(3, urlid);
             ps.execute();
             logger.info("Query executed"+uid+colid+urlid);
-            request.setAttribute("ReqSuccess","URL was successfully deleted!"); 
+            //request.setAttribute("ReqSuccess","URL was successfully deleted!"); 
             RequestDispatcher rd = getServletContext().getRequestDispatcher(jsp);
             rd.include(request, response);
         } catch (SQLException e) {

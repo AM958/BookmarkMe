@@ -49,7 +49,7 @@ public class new_collection extends HttpServlet {
             ps.setString(2, privileges);
             ps.setString(3, uid);
             ps.execute();
-            request.setAttribute("ReqSuccess","Collection was successfully added!");  
+            //request.setAttribute("ReqSuccess","Collection was successfully added!");  
             RequestDispatcher rd = getServletContext().getRequestDispatcher(jsp);
             rd.include(request, response);
         } catch (SQLException e) {

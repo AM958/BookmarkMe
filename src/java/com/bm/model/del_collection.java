@@ -47,7 +47,7 @@ public class del_collection extends HttpServlet {
             ps.setString(1, uid);
             ps.setString(2, colid);
             ps.execute();
-            request.setAttribute("ReqSuccess","Collection was successfully deleted!"); 
+            //request.setAttribute("ReqSuccess","Collection was successfully deleted!"); 
             RequestDispatcher rd = getServletContext().getRequestDispatcher(jsp);
             rd.include(request, response);
         } catch (SQLException e) {

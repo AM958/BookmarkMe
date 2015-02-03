@@ -53,7 +53,7 @@ public class new_url extends HttpServlet {
             ps.setString(3, uid);
             ps.setString(4, description);
             ps.execute();
-            request.setAttribute("ReqSuccess","URL was successfully added!");  
+            //request.setAttribute("ReqSuccess","URL was successfully added!");  
             RequestDispatcher rd = getServletContext().getRequestDispatcher(jsp);
             rd.include(request, response);
         } catch (SQLException e) {
