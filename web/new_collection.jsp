@@ -15,14 +15,15 @@
             user="${initParam.dbUser}"  password="${initParam.dbPassword}"/>
         
         <h1>You are not supposed to be here!</h1>
-            
-        <sql:update dataSource="${ds}">
-            
-            INSERT INTO collections(name, privileges, ownerID) VALUES (?, ?, ?);
-            <sql:param value="${param.name}" />
-            <sql:param value="${param.privileges}" />
-            <sql:param value="${param.uid}"/>
-        </sql:update>
+        <c:if test="${param.name != ''}">    
+            <sql:update dataSource="${ds}">
+
+                INSERT INTO collections(name, privileges, ownerID) VALUES (?, ?, ?);
+                <sql:param value="${param.name}" />
+                <sql:param value="${param.privileges}" />
+                <sql:param value="${param.uid}"/>
+            </sql:update>
+        </c:if>
             
     </body>
 </html>

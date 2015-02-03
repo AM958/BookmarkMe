@@ -14,16 +14,16 @@
             url="${initParam.dbURL}"
             user="${initParam.dbUser}"  password="${initParam.dbPassword}"/>
         
-        <h1>You are not supposed to be here!</h1>
-            
-        <sql:update dataSource="${ds}">
-            
-            INSERT INTO urls(url, collectionID, ownerID, description) VALUES (?, ?, ?, ?);
-            <sql:param value="${param.name}" />
-            <sql:param value="${param.colid}" />
-            <sql:param value="${param.uid}"/>
-            <sql:param value="${param.descr}" />
-        </sql:update>
-            
+        
+              
+            <sql:update dataSource="${ds}">
+
+                INSERT INTO urls(url, collectionID, ownerID, description) VALUES (?, ?, ?, ?);
+                <sql:param value="${param.name}" />
+                <sql:param value="${param.colid}" />
+                <sql:param value="${param.uid}"/>
+                <sql:param value="${param.descr}" />
+            </sql:update>
+       
     </body>
 </html>

@@ -20,12 +20,14 @@ import javax.servlet.http.HttpSession;
  
 import org.apache.log4j.Logger;
 import com.bm.model.User;
+import javax.servlet.http.Cookie;
  
 @WebFilter("/AuthenticationFilter")
 public class AuthenticationFilter implements Filter {
  
     private Logger logger = Logger.getLogger(AuthenticationFilter.class);
      
+    @Override
     public void init(FilterConfig fConfig) throws ServletException {
         logger.info("AuthenticationFilter initialized");
     }
@@ -52,6 +54,7 @@ public class AuthenticationFilter implements Filter {
                 res.sendRedirect("bookmark.me");
             }
             else {
+
                 User user = (User) session.getAttribute("User");
                 if(user.getName() == null){
                     res.sendRedirect("bookmark.me");

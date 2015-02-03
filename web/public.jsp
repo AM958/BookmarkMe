@@ -46,7 +46,7 @@
                     SELECT * FROM collections WHERE PRIVILEGES = "Public"
                             ORDER BY collections.add_ts DESC LIMIT 20
                 ) AS sorted
-           ) AS ranked WHERE rownum %3 =0;
+           ) AS ranked WHERE rownum %3 =2;
         </sql:query>
         </sql:transaction>     
         <div class="row"   >

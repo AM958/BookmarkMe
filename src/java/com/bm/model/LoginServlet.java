@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,7 +48,6 @@ public class LoginServlet extends HttpServlet {
             out.println("<font color=red>"+errorMsg+"</font>");
             rd.include(request, response);
         }else{
-         
         Connection con = (Connection) getServletContext().getAttribute("DBConnection");
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -64,6 +64,9 @@ public class LoginServlet extends HttpServlet {
                 logger.info("User found with details="+user);
                 HttpSession session = request.getSession();
                 session.setAttribute("User", user);
+                Cookie loginCookie = new Cookie("JSESSIONID",session.getId());
+                loginCookie.setMaxAge(30*600); //setting cookie to expire in 300 min
+                response.addCookie(loginCookie); 
                 response.sendRedirect("home.jsp");
             }else{
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/homepage.jsp");
