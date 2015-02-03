@@ -37,7 +37,7 @@ public class new_url extends HttpServlet {
         String errorMsg = null;
         if(newUrl.equals("") || description.equals("")){
             errorMsg ="URL or Description can't be empty!";
-        }         
+        }
         if(errorMsg != null){
             request.setAttribute("ReqError","Error! "+errorMsg); 
             RequestDispatcher rd = getServletContext().getRequestDispatcher(jsp);

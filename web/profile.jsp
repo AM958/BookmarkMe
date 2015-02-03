@@ -43,10 +43,7 @@
 
     <div class="row">  
         <div class="col-sm-10" style="border-radius:20px;">
-            <ul class="elem">
-                <li><p><b>${param.name}'s public profile</b>
-                    
-            </ul>
+            <h3 class="elem3">${param.name}'s public profile</h3>
         <div class="row" >
         
         <c:forEach var="row" items="${collections.rows}" varStatus="loopCount">
@@ -86,6 +83,7 @@
         </div>
         </div>
         <div class="col-sm-2" style="background-color:#689384; border-radius:20px;">
+            <jsp:useBean id="User" class="com.bm.model.User" scope="session"/>
             <h3>Hi 
                 <jsp:getProperty name="User" property="name"  /> 
             </h3>

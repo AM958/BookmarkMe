@@ -146,12 +146,12 @@
             <div id="addurl" class="collapse in">
                 <form id="new_url" action="new_url" method="post" class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label class="sr-only" for="email">URL</label>
+                        <label class="sr-only" for="url_name">URL</label>
                         <input type="url" name="name" id="url_name" placeholder="Enter url" class="form-control">
                     </div>
                         
                     <div class="form-group">
-                        <label class="sr-only" for="email">Description</label>
+                        <label class="sr-only" for="url_description">Description</label>
                         <input type="text" name="descr" id="url_description" placeholder="Enter decription" class="form-control">
                     </div>
                     
