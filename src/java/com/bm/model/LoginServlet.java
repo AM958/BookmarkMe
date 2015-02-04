@@ -52,13 +52,13 @@ public class LoginServlet extends HttpServlet {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
-            ps = con.prepareStatement("select userID, username, email from users where email=? and password=? limit 1");
+            ps = con.prepareStatement("select userID, username, email, verified from users where email=? and password=? limit 1");
             ps.setString(1, email);
             ps.setString(2, password);
             rs = ps.executeQuery();
              
             if(rs != null && rs.next()){
-                 
+
                 //User user = new User(rs.getString("name"), rs.getString("email"), rs.getInt("id"));
                 User user = new User(rs.getString("username"), rs.getString("email"),"Greece", rs.getInt("userID"));
                 logger.info("User found with details="+user);
@@ -66,6 +66,26 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("User", user);
                 Cookie loginCookie = new Cookie("JSESSIONID",session.getId());
                 loginCookie.setMaxAge(30*600); //setting cookie to expire in 300 min
+                
+                if(rs.getByte("verified") == 0){
+
+                    
+                    ps = con.prepareStatement("INSERT INTO collections(ownerID, privileges,name ) VALUES (?, 'Public', ?)");
+                    String collName= rs.getString("username")+"'s public";
+                    ps.setInt(1, rs.getInt("userID"));
+                    ps.setString(2, collName);
+                    ps.execute();
+                    logger.info("Default Public created");
+                    ps = con.prepareStatement("INSERT INTO collections(ownerID, privileges, name) VALUES (?, 'Private', 'My Private')");
+                    ps.setInt(1, rs.getInt("userID"));
+                    ps.execute();
+                    logger.info("Default Private created");
+                    ps = con.prepareStatement("UPDATE users SET verified=1 WHERE userID=?");
+                    ps.setInt(1, rs.getInt("userID"));
+                    ps.execute();
+                    logger.info("Verified status updated");
+                }
+                
                 response.addCookie(loginCookie); 
                 response.sendRedirect("home.jsp");
             }else{

@@ -10,13 +10,13 @@
         user="${initParam.dbUser}"  password="${initParam.dbPassword}"/>
     <div class="row" >
             
-        <div class="col-xs-12  col-md-3"><br/><br/>   
+        <div class="col-xs-12  col-md-3 col-lg-3"><br/><br/>   
             <blockquote id="blq">
                 <p class="text-left">Manage and share your favorite links with the world or with your friends!</p>
             </blockquote>
         </div>
-        <div class="col-xs-12  col-md-1"></div>
-        <div class="col-xs-12  col-md-4">
+        <div class="col-xs-12  col-md-1 col-lg-1"></div>
+        <div class="col-xs-12  col-md-4 col-lg-4">
             <div class="elem3">
                 <h3>Login with email and password</h3>
                 <form action="Login" method="post" class="form-inline" role="form">
@@ -41,8 +41,8 @@
                 <br/>
             </div>
         </div>
-        <div class="col-xs-12  col-md-1"></div>
-        <div class="col-xs-12  col-md-3"><br/><br/>   
+        <div class="col-xs-12  col-md-1 col-lg-1"></div>
+        <div class="col-xs-12  col-md-3 col-lg-3"><br/><br/>   
             <blockquote class="blockquote-reverse " id="blq">
                 <p class="text-right">Create account, log in and get started now!</p>
             </blockquote>

@@ -72,7 +72,7 @@ public class AppErrorHandler extends HttpServlet {
 	      }
 	      
 	      out.write("<br><br>");
-	      out.write("<a href=\"homepage.jsp\">Login Page</a>");
+	      out.write("<a href=\"home.jsp\">Home</a>");
 	      out.write("</body></html>");
 	}
 }

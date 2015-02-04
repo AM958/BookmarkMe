@@ -2,23 +2,23 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>ServletDBLog4jExample</display-name>
   <welcome-file-list>
-    <welcome-file>homepage.jsp</welcome-file>
+    <welcome-file>home.jsp</welcome-file>
   </welcome-file-list>
   <context-param>
     <param-name>dbUser</param-name>
-    <param-value> </param-value>
+    <param-value></param-value>
   </context-param>
   <context-param>
     <param-name>dbPassword</param-name>
-    <param-value> </param-value>
+    <param-value></param-value>
   </context-param>
   <context-param>
     <param-name>dbURL</param-name>
-    <param-value>jdbc:mysql://bookmark.noip.me/bookmarks_test</param-value>
+    <param-value></param-value>
   </context-param>
   <context-param>
     <param-name>log4j-config</param-name>
-    <param-value>WEB-INF/log4j.xml</param-value>
+    <param-value>/WEB-INF/log4j.xml</param-value>
   </context-param>
    
   <error-page>

@@ -65,7 +65,7 @@ public class RegisterServlet extends HttpServlet {
             
             ps.setString(4, Long.toHexString(Double.doubleToLongBits(Math.random())));
             ps.execute();
-             
+
             logger.info("User registered with email="+email);
              
             //forward to login page to login
